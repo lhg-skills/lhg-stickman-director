@@ -73,8 +73,9 @@
 - **Style 2A 科技风**：红针织帽（无绒球）+ 黄 T 恤 + 黑色四肢；纯白 studio + 浅灰透视网格
   + 青蓝玻璃 UI；负约束禁电路板/科幻墙/混凝土裂纹。
 - **Style 2B 故事风**：同人物，置于全彩电影光影环境（卧室暖光/黄昏荒野等）。
-- **Style 3 史前手绘 / Style 4 治愈故事**：见上游 `prehistoric-dark-comedy.md` /
-  `cozy-storytelling.md`，按其覆盖规则执行。
+- **Style 3 史前手绘 / Style 4 治愈故事**：见上游
+  `skills/directing-stickman-videos/references/prehistoric-dark-comedy.md` /
+  `skills/directing-stickman-videos/references/cozy-storytelling.md`，按其覆盖规则执行。
 
 ## 5. Phase B：提示词包
 
@@ -102,6 +103,8 @@
 
 - 整片**一个**配音 profile（身份/音色/语速/语气/录制质感），逐字重复于每段；
   情绪推进交给画面和音乐，不换配音。
+- 多执行层混用时，人声只能有一个来源（lhg 版：TTS），视频片段不生成旁白；
+  BGM 只能有一条（后期统一铺）。
 - BGM：第一段定调（曲风/配器/速度），后续段明确"延续第一段同一 BGM"，
   物理动作配同步音效。
 
@@ -112,3 +115,5 @@
 - 画面零文字；台词与批准版一字不差且 audio-only
 - 色彩 ≤3 强调色（Style 1），无技术色值符号
 - 结尾回到中心信息 + 互动问题；无虚构事实
+- 音画对齐：每段配音 ≤ 10.5s 且未超速 1.05；全片只有一种人声、一条 BGM
+- 成片时长误差 ≤ ±3s；前 3 秒内出现钩子
