@@ -22,7 +22,16 @@
 文案 → 导演提案（lhg 拍板）→ 提示词包 → 双执行层生成 → 合成成片
 
 - v0.1（已交付，2026-10-15）：方法规格 + 可执行 skill
+- v0.1.1（已交付）：闭环补丁——音轨归属、音画对齐、运行档案 `runs/`、风格卡模板 `styles/`
 - v0.2（待做）：第一支正式选题试跑（AI 工具概念讲解，60 秒 9:16），沉淀风格卡
+
+### v0.2 完成标准
+
+- [ ] `runs/<日期>-<slug>/` 档案齐全，`log.md` 记录每个确认门与每笔 credits
+- [ ] 成片 60s ±3s、9:16，通过 METHOD.md §7 全部条目
+- [ ] Flow 消耗 ≤ 200 credits（本月预算的 20%）
+- [ ] lhg 看片拍板"可发"
+- [ ] `styles/` 下产出第一张风格卡 + `log.md` 写"下次要改的 3 件事"
 
 ## 仓库结构（交接必读）
 
@@ -31,6 +40,8 @@
 | `METHOD.md` | 方法规格（七件套），与执行层无关 | **先读这个**，理解方法后再看 skill |
 | `skills/directing-stickman-videos-lhg/SKILL.md` | 可执行 skill：完整实现 METHOD.md，中文旁白优先，Muse + Flow 双执行层 | 按里面的"工作流"节一步一步执行 |
 | `skills/directing-stickman-videos/` | 上游原版文件（kaomei，MIT） | 只读参考（风格配方细节），不直接执行 |
+| `runs/` | 每支片的运行档案（提案/提示词/日志/credits） | 续跑时先读最新目录的 `log.md` |
+| `styles/` | 风格卡（跨片复用的人物/环境/声音锚点） | 开工前查有没有现成的 |
 | `ADAPTATION.md` | 决策记录：为什么这样改、预算纪律、人机分工、路线图 | 了解背景时读 |
 | `LICENSE` | 上游 MIT 原文，完整保留 | — |
 
@@ -47,11 +58,12 @@
 
 ## Agent 执行方式
 
-1. 先读 `METHOD.md`，再读 `skills/directing-stickman-videos-lhg/SKILL.md`。
+1. 先读 `METHOD.md`，再读 `skills/directing-stickman-videos-lhg/SKILL.md`；
+   若是续跑，再读 `runs/` 最新目录的 `log.md`。
 2. 严格按 SKILL.md "工作流"节推进；卡在确认门必须停下来等 lhg 拍板，
    不得自行跳过。
-3. 双执行层路由：Muse 出全片草稿（分镜预览图 → 6 条视频 → TTS 配音）→
-   lhg 看片确认 → 标记需 Flow 重做的镜头（默认无）→ FFmpeg/剪映合成
+3. 双执行层路由：TTS 配音并测时长 → 音画对齐 → Muse 出全片草稿
+   （分镜预览图 → N 条视频，6 条一轮）→ lhg 看片确认 → 标记需 Flow 重做的镜头（默认无）→ FFmpeg/剪映合成
    （画面 + 配音 + 字幕 + BGM）。
 4. Flow 每个补镜先报 credits 估算，lhg 确认后再烧；不自动购买 credits；
    不可逆操作一律先确认。
