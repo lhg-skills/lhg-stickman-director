@@ -14,11 +14,16 @@
 
 ## 改了什么（相对上游）
 
-- 中文旁白优先，英文对照版保留（供出海）
-- 生成端双链路：国内走豆包 Seedance，出海走 Google Flow
+方向是**吸收方法、替换执行层**，不是延续上游链路：
+
+- 方法全量保留：Setup gate → Phase A 导演提案（五阶段心跳引擎）→ 确认门 →
+  Phase B 提示词包 → 风格锁定配方 → 声音连续锁，见 `METHOD.md`
+- 执行层替换：上游"Gemini Omni Flash via Flow 单链路"改为
+  **Muse 直出层**（分镜预览图/草稿视频/中文 TTS 配音）+ **Flow 质量层**
+  （Gemini PRO，只补必须高质量的镜头）双链路
+- 中文旁白优先（45–55 字/10 秒），英文对照版保留（供出海）
 - 默认 9:16、60 秒，对齐视频号/抖音/小红书
-- 新增"AI 工具概念讲解"选题模板
-- 完整适配方案见 `ADAPTATION.md`；适配版 skill 在
+- 完整方案见 `ADAPTATION.md`；可执行 skill 在
   `skills/directing-stickman-videos-lhg/SKILL.md`
 
 ## 使用方法
